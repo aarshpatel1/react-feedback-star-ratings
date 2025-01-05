@@ -38,32 +38,37 @@ function Feedback() {
 
     return (
         <>
-            <form action="" onSubmit={handleSubmit}>
-                <label htmlFor="feedback">Feedback</label>
-                <br />
-                <textarea
-                    name="feedback"
-                    id="feedback"
-                    cols="30"
-                    rows="5"
-                    value={feedback.feedback || ""}
-                    autoFocus
-                    onChange={handleChange}
-                ></textarea>
-                <br />
-                {[...Array(5)].map((_, index) => (
-                    <FaStar
-                        key={index}
-                        onMouseOver={() => handleMouseOver(index)}
-                        onMouseLeave={handleMouseLeave}
-                        onClick={() => handleClick(index)}
-                        color={index < (hover || star) ? "yellow" : "gray"}
-                    />
-                ))}
-                <br />
-                <button>Submit</button>
-            </form>
-            <Data feedbackList={feedbackList} />
+            <div className="container">
+                <form action="" onSubmit={handleSubmit}>
+                    <label htmlFor="feedback">Feedback</label>
+                    <textarea
+                        name="feedback"
+                        id="feedback"
+                        cols="30"
+                        rows="5"
+                        value={feedback.feedback || ""}
+                        autoFocus
+                        onChange={handleChange}
+                    ></textarea>
+                    <div className="stars">
+                        {[...Array(5)].map((_, index) => (
+                            <FaStar
+                                key={index}
+                                onMouseOver={() => handleMouseOver(index)}
+                                onMouseLeave={handleMouseLeave}
+                                onClick={() => handleClick(index)}
+                                color={
+                                    index < (hover || star) ? "yellow" : "gray"
+                                }
+                            />
+                        ))}
+                    </div>
+                    <button>Submit</button>
+                </form>
+                <div className="review-card-container">
+                    <Data feedbackList={feedbackList} />
+                </div>
+            </div>
         </>
     );
 }
