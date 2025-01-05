@@ -80,6 +80,8 @@ form {
 label {
   display: block;
   margin: 12px 0;
+  font-size: 20px;
+  font-weight: bolder;
 }
 
 textarea {
@@ -123,11 +125,15 @@ h1 {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
-
 .card h2 {
   margin: 0;
 }
 
 .card p {
   margin: 12px 0;
+}
+
+.inline-heading {
+  font-weight: bold;
+  margin-right: 12px;
 }

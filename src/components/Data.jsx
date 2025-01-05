@@ -11,9 +11,14 @@ function Data({ feedbackList }) {
                     <div className="card" key={index}>
                         <div>
                             <h2>Unknown User</h2>
-                            <p>{feedback.feedback}</p>
+                            <p>
+                                <span className="inline-heading">
+                                    Feedback :
+                                </span>{" "}
+                                {feedback.feedback}
+                            </p>
                             <span>
-                                Rating:
+                                <span className="inline-heading">Rating :</span>
                                 {[...Array(5)].map((_, index) => (
                                     <span key={index}>
                                         <FaStar
